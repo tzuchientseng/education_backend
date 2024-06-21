@@ -7,8 +7,10 @@
 #     path('auth/register/', RegisterView.as_view(), name='register'),
 # ]
 from django.urls import path
-from .views import UserCreate
+from .views import FileUploadView, FileListView, FileDeleteView
 
 urlpatterns = [
-    path('auth/register/', UserCreate.as_view(), name='user-create'),
+    path('upload/', FileUploadView.as_view(), name='file-upload'),
+    path('files/', FileListView.as_view(), name='file-list'),
+    path('delete/<str:filename>/', FileDeleteView.as_view(), name='file-delete'),
 ]

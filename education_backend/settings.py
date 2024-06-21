@@ -163,3 +163,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",  # Vue.js 開發伺服器的 URL
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
