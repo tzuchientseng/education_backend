@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,  # 引入用於獲取 JWT 的視圖
+    TokenRefreshView,     # 引入用於刷新 JWT 的視圖
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('quizzes.urls')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # 用戶登錄後獲取訪問和刷新令牌的端點
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # 使用刷新令牌來獲取新的訪問令牌的端點
 ]
+
