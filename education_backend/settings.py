@@ -164,7 +164,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 # CORS 設定
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",  # Vue.js 開發伺服器的 URL
+    "http://192.168.1.102:8080",  # 添加這行，允許從這個地址的請求
 ]
+CORS_ALLOW_CREDENTIALS = True  # 確保允許憑證
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
