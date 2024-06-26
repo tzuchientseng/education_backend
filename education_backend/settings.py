@@ -28,7 +28,14 @@ SECRET_KEY = 'django-insecure-th4@-fofp-ie@4@87*+-=m^a$t-8=^e+x+38&)m=l#$x*glqw5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '192.168.1.102',
+    'localhost',
+    'sunnytseng.com',  # 添加你的域名
+    'www.sunnytseng.com',
+]
+
 
 # Application definition
 
